@@ -14,7 +14,7 @@
 - ✅ Fully responsive design (mobile, tablet, desktop)
 - 🚀 Built with modern React (v18+)
 - ♿ Accessibility improvements
-- 🎨 Consistent styling across all 
+- 🎨 Consistent styling across  
  
 ### Tech
 * [Python(3.0 or above)](https://www.python.org/)
