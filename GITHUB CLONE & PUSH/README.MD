@@ -15,8 +15,9 @@
 - DO COMMIT AND PUSH IN A SINGLE TIME
 - BUT WHEN YOU SEE THAT  `OPEN GIT.LOG`
 - THEN GO THE TERMINALS AND ADD THE BELOW CODE
-```git config --global user.name "Sumit Pal"
-git config --global user.email "your_github_email@example.com"'''
+```bash
+git config --global user.name "Sumit Pal"
+git config --global user.email "your_github_email@example.com"
 
 
 
