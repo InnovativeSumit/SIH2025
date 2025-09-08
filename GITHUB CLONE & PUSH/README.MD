@@ -16,8 +16,8 @@
 - BUT WHEN YOU SEE THAT  `OPEN GIT.LOG`
 - THEN GO THE TERMINALS AND ADD THE BELOW CODE
 ```bash
-git config --global user.name "Sumit Pal"
-git config --global user.email "your_github_email@example.com"
+git config --global user.name "InnovativeSumit"
+git config --global user.email "palsumit6002@gmail.com"
 
 
 
