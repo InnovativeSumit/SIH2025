@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALCROP - Crop Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- <div class="logo">CroP<span>NEXUS</span></div> -->
+        <div class="header-right">
+            <div class="user-profile">
+                <div class="user-avatar"><button  class="profile">js</div>
+                <div class="user-info">
+                    <div class="user-name">John Smith</div>
+                    <div class="user-role">Farmer</div>
+                </div>
+            </div>
+        </div>
+         <div class="profile-dropdown">
+                    <div class="dropdown-header">
+                        <div class="header-avatar">JS</div>
+                        <div class="header-info">
+                            <div class="user-name">John Smith</div>
+                            <div class="user-role">Farmer</div>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown-body">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">FULL NAME</div>
+                                <div class="info-value">John Smith</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-at"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">USERNAME</div>
+                                <div class="info-value">johnsmith_farmer</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">EMAIL</div>
+                                <div class="info-value">john@example.com</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown-footer">
+                        <button class="btn btn-edit" onclick="window.location.href='linkdash.html'">
+                            <i class="fas fa-edit"></i> Edit Profile
+                        </button>
+                        <button class="btn btn-logout">
+                            <i class="fas fa-sign-out-alt"></i> Log Out
+                        </button>
+                    </div>
+            
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="#" class="nav-link active" data-section="dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#" class="nav-link" data-section="crop-prediction"><i class="fas fa-seedling"></i> Crop Prediction</a></li>
+                <li><a href="#" class="nav-link" data-section="weather-forecast"><i class="feature-icon fas fa-leaf"></i>Plant Disease Detection</a></li>
+                <li><a href="#" class="nav-link" data-section="market-prices"><i class="feature-icon far fa-calendar-alt"></i> Crop Calendar</a></li>
+                <!-- <li><a href="#" class="nav-link" data-section="farming-resources"><i class="fas fa-book"></i> Farming Resources</a></li> -->
+                <li><a href="#" class="nav-link" data-section=""><i class="feature-icon fas fa-vial"></i> Soil Health</a></li>
+                <li><a href="#" class="nav-link" data-section=""><i class="feature-icon fas fa-chart-line"></i> Crop Yield Prediction</a></li>
+                 <li><a href="#" class="nav-link" data-section=""><i class="feature-icon fas fa-bug"></i>  Pest & Pesticide Detection</a></li>
+                  <li><a href="#" class="nav-link" data-section=""><i class="feature-icon fas fa-store"></i>  Live Market</a></li>
+                   <li><a href="#" class="nav-link" data-section=""><i class="feature-icon fas fa-tint"></i> Water Managemen</a></li>
+                   <li><a href="#" class="nav-link" data-section=""><i class="feature-icon fas fa-users"></i> Community</a></li>
+                   <li><a href="#" class="nav-link" data-section="about"><i class="feature-icon fas fa-circle"></i> About</a></li>
+                   <li><a href="#" class="nav-link" data-section="contact"><i class="feature-icon fas fa-phone"></i> Contact us</a></li>
+
+                <li class="end"><a href="perdash.html"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <div class="page-title">
+                    <h1>Farm Dashboard</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="dashboard.html">Home</a></li>
+                        <li>Dashboard</li>
+                    </ul>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-cards">
+                    <div class="card stat-card">
+                        <div class="stat-icon icon-1">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>68%</h3>
+                            <p>Soil Moisture</p>
+                        </div>
+                    </div>
+
+                    <div class="card stat-card">
+                        <div class="stat-icon icon-2">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>24°C</h3>
+                            <p>Temperature</p>
+                        </div>
+                    </div>
+
+                    <div class="card stat-card">
+                        <div class="stat-icon icon-3">
+                            <i class="fas fa-cloud-rain"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>30%</h3>
+                            <p>Rain Chance</p>
+                        </div>
+                    </div>
+
+                    <div class="card stat-card">
+                        <div class="stat-icon icon-4">
+                            <i class="fas fa-ruler-combined"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>6.8</h3>
+                            <p>Soil pH Level</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Charts Section -->
+                <div class="charts">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h2>Soil Health Overview</h2>
+                            <div class="chart-actions">
+                                <select>
+                                    <option>Last 30 Days</option>
+                                    <option>Last 90 Days</option>
+                                    <option>Last Year</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-placeholder">
+                            Soil Health Chart
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h2>Recent Alerts</h2>
+                        </div>
+                        <ul class="activity-list">
+                            <li class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h3>Pest Alert</h3>
+                                    <p>Potential aphid infestation detected in northern field</p>
+                                    <div class="activity-time">2 hours ago</div>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-cloud-rain"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h3>Weather Update</h3>
+                                    <p>Heavy rainfall expected in next 48 hours</p>
+                                    <div class="activity-time">5 hours ago</div>
+                                </div>
+                            </li>
+                            <li class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h3>Irrigation Complete</h3>
+                                    <p>Section B irrigation completed successfully</p>
+                                    <div class="activity-time">1 day ago</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Crop Prediction Section -->
+            <!-- <section id="crop-prediction" class="content-section">
+                <div class="page-title">
+                    <h1>Crop Prediction</h1>
+                    <ul class="breadcrumb">
+                       <li><a href="dashboard.html">Home</a></li>
+                        <li>Crop Prediction</li>
+                    </ul>
+                </div>
+
+                <div class="form-container">
+                    <h2>Predict the Best Crop for Your Farm</h2>
+                    <p>Fill in the details below to get a crop recommendation based on your farm conditions.</p>
+                    
+                    <form id="crop-prediction-form">
+                        <div class="form-group">
+                            <label for="location">Current Location</label>
+                            <input type="text" id="location" class="form-control" placeholder="Enter your location">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="soil-type">Soil Type</label>
+                            <select id="soil-type" class="form-control">
+                                <option value="">Select Soil Type</option>
+                                <option value="sandy">Sandy Soil</option>
+                                <option value="clay">Clay Soil</option>
+                                <option value="silt">Silt Soil</option>
+                                <option value="peat">Peat Soil</option>
+                                <option value="chalky">Chalky Soil</option>
+                                <option value="loamy">Loamy Soil</option>
+                            </select>
+                            
+                            <div class="image-upload-container">
+                                <p>Upload an image of your soil for analysis</p>
+                                <input type="file" id="soil-image-upload" accept="image/*" style="display: none;">
+                                <label for="soil-image-upload" class="upload-btn">
+                                    <i class="fas fa-upload"></i> Choose Image
+                                </label>
+                                <img id="soil-image-preview" class="image-preview" src="#" alt="Soil image preview">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="temperature">Average Temperature (°C)</label>
+                            <input type="number" id="temperature" class="form-control" placeholder="Enter temperature">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="rainfall">Annual Rainfall (mm)</label>
+                            <input type="number" id="rainfall" class="form-control" placeholder="Enter rainfall">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ph-level">Soil pH Level</label>
+                            <input type="number" id="ph-level" class="form-control" placeholder="Enter pH level" step="0.1" min="0" max="14">
+                        </div>
+                        
+                        <button type="submit" class="btn">Predict Crop</button>
+                    </form>
+                    
+                    <div id="prediction-result" style="display: none; margin-top: 20px; padding: 15px; background-color: #e8f5e9; border-radius: 8px;">
+                        <h3>Prediction Result</h3>
+                        <p id="result-text"></p>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- Weather Forecast Section -->
+            <!-- <section id="weather-forecast" class="content-section">
+                <div class="page-title">
+                    <h1>Weather Forecast</h1>
+                    <ul class="breadcrumb">
+                       <li><a href="dashboard.html">Home</a></li>
+                        <li>Weather Forecast</li>
+                    </ul>
+                </div>
+
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="weather-location">Location</label>
+                        <input type="text" id="weather-location" class="form-control" placeholder="Enter location" value="Farm Location">
+                    </div>
+                </div>
+
+                <div class="weather-cards">
+                    <div class="card weather-card">
+                        <div class="weather-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <h3>Today</h3>
+                        <p>24°C / 15°C</p>
+                        <p>Sunny</p>
+                    </div>
+                    
+                    <div class="card weather-card">
+                        <div class="weather-icon">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <h3>Tomorrow</h3>
+                        <p>22°C / 14°C</p>
+                        <p>Partly Cloudy</p>
+                    </div>
+                    
+                    <div class="card weather-card">
+                        <div class="weather-icon">
+                            <i class="fas fa-cloud-rain"></i>
+                        </div>
+                        <h3>Day 3</h3>
+                        <p>19°C / 13°C</p>
+                        <p>Light Rain</p>
+                    </div>
+                    
+                    <div class="card weather-card">
+                        <div class="weather-icon">
+                            <i class="fas fa-cloud-showers-heavy"></i>
+                        </div>
+                        <h3>Day 4</h3>
+                        <p>18°C / 12°C</p>
+                        <p>Heavy Rain</p>
+                    </div>
+                </div>
+
+                <div class="chart-container" style="margin-bottom: 20px;">
+                    <div class="chart-header">
+                        <h2>7-Day Temperature Forecast</h2>
+                    </div>
+                    <div class="chart-placeholder">
+                        Temperature Chart
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h2>Precipitation Forecast</h2>
+                    </div>
+                    <div class="chart-placeholder">
+                        Rainfall Chart
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- Market Prices Section -->
+            <!-- <section id="market-prices" class="content-section">
+                <div class="page-title">
+                    <h1>Market Prices</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="dashboard.html">Home</a></li>
+                        <li>Market Prices</li>
+                    </ul>
+                </div>
+
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="market-region">Select Region</label>
+                        <select id="market-region" class="form-control">
+                            <option value="north">North Region</option>
+                            <option value="south">South Region</option>
+                            <option value="east">East Region</option>
+                            <option value="west">West Region</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Current Crop Prices (per kg)</h2>
+                    <table class="market-table">
+                        <thead>
+                            <tr>
+                                <th>Crop</th>
+                                <th>Current Price</th>
+                                <th>Last Week</th>
+                                <th>Last Month</th>
+                                <th>Trend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Wheat</td>
+                                <td>$0.25</td>
+                                <td>$0.24</td>
+                                <td>$0.27</td>
+                                <td><i class="fas fa-arrow-up" style="color: green;"></i> +4.2%</td>
+                            </tr>
+                            <tr>
+                                <td>Corn</td>
+                                <td>$0.18</td>
+                                <td>$0.19</td>
+                                <td>$0.20</td>
+                                <td><i class="fas fa-arrow-down" style="color: red;"></i> -5.3%</td>
+                            </tr>
+                            <tr>
+                                <td>Rice</td>
+                                <td>$0.32</td>
+                                <td>$0.30</td>
+                                <td>$0.29</td>
+                                <td><i class="fas fa-arrow-up" style="color: green;"></i> +6.7%</td>
+                            </tr>
+                            <tr>
+                                <td>Soybeans</td>
+                                <td>$0.28</td>
+                                <td>$0.27</td>
+                                <td>$0.30</td>
+                                <td><i class="fas fa-arrow-up" style="color: green;"></i> +3.7%</td>
+                            </tr>
+                            <tr>
+                                <td>Potatoes</td>
+                                <td>$0.15</td>
+                                <td>$0.16</td>
+                                <td>$0.14</td>
+                                <td><i class="fas fa-arrow-down" style="color: red;"></i> -6.3%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="chart-container" style="margin-top: 20px;">
+                    <div class="chart-header">
+                        <h2>Price Trends (Last 6 Months)</h2>
+                    </div>
+                    <div class="chart-placeholder">
+                        Market Trends Chart
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- Farming Resources Section
+            <section id="farming-resources" class="content-section">
+                <div class="page-title">
+                    <h1>Farming Resources</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="dashboard.html">Home</a></li>
+                        <li>Farming Resources</li>
+                    </ul>
+                </div>
+
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Farming Guides</h3>
+                        <p>Comprehensive guides for various crops including planting, growing, and harvesting techniques.</p>
+                        <button class="btn" style="margin-top: 15px;">View Guides</button>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Video Tutorials</h3>
+                        <p>Step-by-step video tutorials on modern farming techniques and best practices.</p>
+                        <button class="btn" style="margin-top: 15px;">Watch Videos</button>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Tools & Equipment</h3>
+                        <p>Information about essential farming tools and how to use them effectively.</p>
+                        <button class="btn" style="margin-top: 15px;">Explore Tools</button>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3>Pest Management</h3>
+                        <p>Identify and manage common pests with eco-friendly solutions.</p>
+                        <button class="btn" style="margin-top: 15px;">Learn More</button>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3>Irrigation Methods</h3>
+                        <p>Learn about efficient water management and irrigation techniques.</p>
+                        <button class="btn" style="margin-top: 15px;">Discover Methods</button>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Organic Farming</h3>
+                        <p>Resources for transitioning to and maintaining organic farming practices.</p>
+                        <button class="btn" style="margin-top: 15px;">Go Organic</button>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- About Section -->
+            <section id="about" class="content-section">
+                <div class="page-title">
+                    <h1>About Us</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="dashboard.html">Home</a></li>
+                        <li>About</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="margin-bottom: 30px;">
+                    <h2>Welcome to CROPNEXUS</h2>
+                    <p>CROPNEXUS is an innovative crop management system designed to help farmers make data-driven decisions for better yields and sustainable farming practices.</p>
+                    
+                    <p>Our mission is to empower farmers with technology that simplifies complex agricultural decisions, from crop selection to harvest timing.</p>
+                    
+                    <h3 style="margin-top: 20px;">Our Team: CROPNEXUS</h3>
+                </div>
+
+                <div class="team-cards">
+                    <div class="team-card">
+                        <img src="https://i.ibb.co/60n8dhQj/Screenshot-2025-09-12-103352.png" alt="Team Leader" class="team-img">
+                        <h3>SUMIT</h3>
+                        <p>Ai kingt</p>
+                        <p>1000+ years of experience</p>
+                    </div>
+                    
+                    <div class="team-card">
+                        <img src="https://i.ibb.co/sdVwk4pL/Screenshot-2025-09-12-170759.png" alt="Developer" class="team-img">
+                        <h3>MRITIKA</h3>
+                        <p>dataset expert</p>
+                        <p>ai girl </p>
+                    </div>
+                    
+                    <div class="team-card">
+                        <img src="https://i.ibb.co/rRZCHcjQ/Screenshot-2025-09-12-110113.png" alt="Researcher" class="team-img">
+                        <h3>MANAB</h3>
+                        <p>Agricultural Researcher</p>
+                        <p>the cyber king</p>
+                    </div>
+                    
+                    <div class="team-card">
+                        <img src="https://i.ibb.co/JwsPTNFs/Screenshot-2025-09-12-103551.png" alt="Designer" class="team-img">
+                        <h3>DEBASHIS</h3>
+                        <p>Backend king</p>
+                        <p>Creating server side applications</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="https://i.ibb.co/QvNN5LD1/Screenshot-2025-09-12-170747.png" alt="Designer" class="team-img">
+                        <h3>SNEHA</h3>
+                        <p></p>
+                        <p>Creating server side applications</p>
+                    </div>
+                     <div class="team-card">
+                        <img src="https://i.ibb.co/wFZfS38f/Screenshot-2025-09-12-171412.png" alt="Designer" class="team-img">
+                        <h3>SUBHADIP</h3>
+                        <p>UI/UX Designer</p>
+                        <p>Creating farmer-friendly interfaces</p>
+                    </div>
+                </div>
+
+                <div class="carD">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2025, CROPNEXUS began as a university project aimed at helping local farmers improve their crop yields. Today, we've grown into a comprehensive platform serving farmers worldwide.</p>
+                                        <p>Founded in 2025, CROPNEXUS began as a university project aimed at helping local farmers improve their crop yields. Today, we've grown into a comprehensive platform serving farmers across multiple regions with data-driven agricultural insights.</p>
+
+                    <h3 style="margin-top: 20px;">Our Technology</h3>
+                    <p>CROPNEXUS uses advanced machine learning algorithms combined with satellite imagery and IoT sensor data to provide accurate predictions and recommendations tailored to your specific farming conditions.</p>
+                </div>
+                 <div class="card" style="margin-top: 30px;">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="form-group">
+                        <select id="faq-select" class="form-control">
+                            <option value="">Select a question</option>
+                            <option value="faq1">How accurate are the crop predictions?</option>
+                            <option value="faq2">Is my data secure with ALCROP?</option>
+                            <option value="faq3">What equipment do I need to use ALCROP?</option>
+                            <option value="faq4">How often is weather data updated?</option>
+                            <option value="faq5">Can I use ALCROP on my mobile device?</option>
+                        </select>
+                    </div>
+                    
+                    <div id="faq-answers" style="margin-top: 20px;">
+                        <div id="faq1" class="faq-answer" style="display: none;">
+                            <h4>How accurate are the crop predictions?</h4>
+                            <p>Our crop prediction algorithm has an accuracy rate of approximately 85-90% based on historical data and field testing. Accuracy may vary based on the quality of input data and local conditions.</p>
+                        </div>
+                        
+                        <div id="faq2" class="faq-answer" style="display: none;">
+                            <h4>Is my data secure with ALCROP?</h4>
+                            <p>Yes, we take data security seriously. All your farm data is encrypted and stored securely. We never share your personal information or farm data with third parties without your permission.</p>
+                        </div>
+                        
+                        <div id="faq3" class="faq-answer" style="display: none;">
+                            <h4>What equipment do I need to use ALCROP?</h4>
+                            <p>ALCROP works with any internet-connected device. For optimal results, we recommend using our soil sensors which provide real-time data to the platform. Basic functionality is available with just manual input of your farm conditions.</p>
+                        </div>
+                        
+                        <div id="faq4" class="faq-answer" style="display: none;">
+                            <h4>How often is weather data updated?</h4>
+                            <p>Weather data is updated every 3 hours from reliable meteorological sources. Severe weather alerts are pushed to users in real-time.</p>
+                        </div>
+                        
+                        <div id="faq5" class="faq-answer" style="display: none;">
+                            <h4>Can I use ALCROP on my mobile device?</h4>
+                            <p>Yes, ALCROP is fully responsive and works on smartphones and tablets. We also have mobile apps available for iOS and Android for enhanced functionality.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Us Section -->
+            <section id="contact" class="content-section">
+                <div class="page-title">
+                    <h1>Contact Us</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="dashboard.html">Home</a></li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+
+                <div class="contact-container">
+                    <div class="form-container">
+                        <h2>Send Us a Message</h2>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" class="form-control" placeholder="Enter subject">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <ul class="contact-details">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Address</strong><br>
+                                    123 Farm Road, Agricultural District<br>
+                                    Countryside, CS 12345
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong><br>
+                                    +1 (555) 123-4567
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong><br>
+                                    support@alcrop.com
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Business Hours</strong><br>
+                                    Monday-Friday: 8am-6pm<br>
+                                    Saturday: 9am-2pm<br>
+                                    Sunday: Closed
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- <div class="card" style="margin-top: 30px;">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="form-group">
+                        <select id="faq-select" class="form-control">
+                            <option value="">Select a question</option>
+                            <option value="faq1">How accurate are the crop predictions?</option>
+                            <option value="faq2">Is my data secure with ALCROP?</option>
+                            <option value="faq3">What equipment do I need to use ALCROP?</option>
+                            <option value="faq4">How often is weather data updated?</option>
+                            <option value="faq5">Can I use ALCROP on my mobile device?</option>
+                        </select>
+                    </div>
+                    
+                    <div id="faq-answers" style="margin-top: 20px;">
+                        <div id="faq1" class="faq-answer" style="display: none;">
+                            <h4>How accurate are the crop predictions?</h4>
+                            <p>Our crop prediction algorithm has an accuracy rate of approximately 85-90% based on historical data and field testing. Accuracy may vary based on the quality of input data and local conditions.</p>
+                        </div>
+                        
+                        <div id="faq2" class="faq-answer" style="display: none;">
+                            <h4>Is my data secure with ALCROP?</h4>
+                            <p>Yes, we take data security seriously. All your farm data is encrypted and stored securely. We never share your personal information or farm data with third parties without your permission.</p>
+                        </div>
+                        
+                        <div id="faq3" class="faq-answer" style="display: none;">
+                            <h4>What equipment do I need to use ALCROP?</h4>
+                            <p>ALCROP works with any internet-connected device. For optimal results, we recommend using our soil sensors which provide real-time data to the platform. Basic functionality is available with just manual input of your farm conditions.</p>
+                        </div>
+                        
+                        <div id="faq4" class="faq-answer" style="display: none;">
+                            <h4>How often is weather data updated?</h4>
+                            <p>Weather data is updated every 3 hours from reliable meteorological sources. Severe weather alerts are pushed to users in real-time.</p>
+                        </div>
+                        
+                        <div id="faq5" class="faq-answer" style="display: none;">
+                            <h4>Can I use ALCROP on my mobile device?</h4>
+                            <p>Yes, ALCROP is fully responsive and works on smartphones and tablets. We also have mobile apps available for iOS and Android for enhanced functionality.</p>
+                        </div>
+                    </div>
+                </div> -->
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ALCROP - Crop Management System. All rights reserved.</p>
+        <p>Designed for sustainable agriculture and better farming decisions.</p>
+    </footer>
+     <!-- AI Assistant Widget -->
+    <div class="ai-assistant">
+        <div class="ai-chat-window">
+            <div class="chat-header">
+                <div class="ai-button" style="width: 30px; height: 30px; font-size: 16px;">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>EcoNexus AI Assistant</h3>
+                <!-- Close button -->
+                <button class="close-chat">&times;</button>
+            </div>
+            <div class="chat-messages">
+                <div class="message ai-message">
+                    Hello! I'm your EcoNexus AI assistant. How can I help you today?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        
+        <!-- Main floating AI button -->
+        <div class="ai-button pulse toggle-ai">
+            <i class="fas fa-robot"></i>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
