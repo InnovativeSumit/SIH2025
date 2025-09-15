@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropNexus - Agricultural Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <style>
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #183912, #010f05);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+         .hero {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path fill="%2322c55e" fill-opacity="0.1" d="M0,300 C400,100 800,100 1200,300 L1200,600 L0,600 Z"/></svg>') no-repeat;
+            background-size: 100% auto;
+            background-position: center bottom;
+            z-index: -1;
+        }
+        
+        .floating-leaves {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .leaf {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(34, 197, 94, 0.5);
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo1{
+            color:white;
+            font-size:30px;
+            margin-top:-19px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #d0e8bb;
+            margin-bottom: 30px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-header {
+            padding: 20px;
+            background: #1f6a23;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        
+        .feature-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        
+        .feature-desc {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        
+        /* .team-pill {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+        } */
+        
+        .team-pill i {
+            margin-right: 5px;
+            font-size: 0.8rem;
+        }
+        
+        .get-started-container {
+            text-align: center;
+            margin-top: 30px;
+            padding: 30px;
+        }
+        
+        .get-started-btn {
+            background: linear-gradient(45deg, #22c55e, #4ade80);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgb(64, 255, 6);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .get-started-btn:hover {
+            background: #0f1a05;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 253, 251, 0.5);
+        }
+        
+        .get-started-btn:active {
+            transform: translateY(0);
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ccc, transparent);
+            margin: 25px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .get-started-btn {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+        
+        .feature-icon {
+            font-size: 1.8rem;
+            margin-right: 10px;
+        }
+   </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="floating-leaves">
+            <div class="leaf" style="left: 10%; animation-delay: 0s;"><i class="fas fa-leaf"></i></div>
+            <div class="leaf" style="left: 20%; animation-delay: 2s;"><i class="fas fa-leaf"></i></div>
+            <div class="leaf" style="left: 30%; animation-delay: 4s;"><i class="fas fa-leaf"></i></div>
+            <div class="leaf" style="right: 10%; animation-delay: 6s;"><i class="fas fa-leaf"></i></div>
+            <div class="leaf" style="right: 20%; animation-delay: 8s;"><i class="fas fa-leaf"></i></div>
+            <div class="leaf" style="right: 30%; animation-delay: 10s;"><i class="fas fa-leaf"></i></div>
+        </div>
+    </section>
+    <div class="container">
+        <header>
+            <div class="logo">CROPNEXUS</div>
+            <div class="logo1">features</div>
+            <div class="tagline">Comprehensive Agricultural Solutions Platform</div>
+        </header>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-title"><i class="feature-icon fas fa-seedling"></i>AI Crop predection</div>
+            
+                </div>
+                <div class="feature-content">
+                    <p class="feature-desc">AI-powered crop recommendations based on soil type, climate conditions, and market trends.</p>
+                    <div class="divider"></div>
+                   
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-title"><i class="feature-icon fas fa-leaf"></i> AI Plant Disease Detection</div>
+                 
+                </div>
+                <div class="feature-content">
+                    <p class="feature-desc">Identify plant diseases, pests, and fertilizer needs through image recognition technology.</p>
+                    <div class="divider"></div>
+              
+                </div>
+            </div>
+<!--             
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-title"><i class="feature-icon fas fa-comments"></i> AI Chatbot</div>
+                    
+                </div>
+                <div class="feature-content">
+                    <p class="feature-desc">Interactive chatbot for farmers to get instant answers to agricultural queries.</p>
+                    <div class="divider"></div>
+                 
+                </div>
+            </div> -->
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-title"><i class="feature-icon far fa-calendar-alt"></i> Crop Calendar</div>
+                </div>
+                <div class="feature-content">
+                    <p class="feature-desc">Plan and manage farming activities with personalized crop calendar and to-do lists.</p>
+                    <div class="divider"></div>
+                   
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-title"><i class="feature-icon fas fa-vial"></i>AI  Soil Health</div>
+                 
+                </div>
+                <div class="feature-content">
+                    <p class="feature-desc">Comprehensive soil health analysis and recommendations for improvement.</p>
+                    <div class="divider"></div>
+                  
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-title"><i class="feature-icon fas fa-chart-line"></i>AI Crop Yield Prediction</div>
+                   
+                </div>
+                <div class="feature-content">
+                    <p class="feature-desc">Predict crop yields using historical data, weather patterns, and farming practices.</p>
+                    <div class="divider"></div>
+                 
+                </div>
+            </div>
+            
+            <!-- <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-title"><i class="feature-icon fas fa-users"></i> Community</div>
+                    
+                </div>
+                <div class="feature-content">
+                    <p class="feature-desc">Connect with other farmers, share knowledge, and discuss agricultural practices.</p>
+                    <div class="divider"></div>
+                 
+                </div>
+            </div> -->
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-title"><i class="feature-icon fas fa-bug"></i>Fertilizer And Pestiside Prediction</div>
+                
+                </div>
+                <div class="feature-content">
+                    <p class="feature-desc">Identify pests and recommend appropriate pesticides with minimal environmental impact.</p>
+                    <div class="divider"></div>
+                  
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-title"><i class="feature-icon fas fa-store"></i> Live Market</div>
+                  
+                </div>
+                <div class="feature-content">
+                    <p class="feature-desc">Real-time market prices, trends, and trading platform for agricultural products.</p>
+                    <div class="divider"></div>
+                  
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-title"><i class="feature-icon fas fa-tint"></i> AI PowerdWater Management</div>
+                    
+                </div>
+                <div class="feature-content">
+                    <p class="feature-desc">Optimize water usage with smart irrigation recommendations and monitoring.</p>
+                    <div class="divider"></div>
+
+                </div>
+            </div>
+             <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-title"><i class="feature-icon fas fa-users"></i> Community</div>
+                    
+                </div>
+                <div class="feature-content">
+                    <p class="feature-desc">Connect with other farmers, share knowledge, and discuss agricultural practices.</p>
+                    <div class="divider"></div>
+                 
+                </div>
+            </div>
+        </div>
+        
+        <div class="get-started-container">
+            <button class="get-started-btn"onclick="window.location.href='dashboard.html'" >Get Started</button>
+        </div>
+    </div>
+
+    <script >
+        // Add interactive functionality
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+        
+        // Animate the "Get Started" button
+        const getStartedBtn = document.querySelector('.get-started-btn');
+        getStartedBtn.addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.05)';
+        });
+        
+        getStartedBtn.addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+        });
+        
+        getStartedBtn.addEventListener('click', function() {
+            alert('Welcome to PropNexus! Your agricultural journey begins now.');
+        });
+    </script>
+</body>
+</html>

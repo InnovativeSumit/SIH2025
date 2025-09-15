@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CroNexus - Select Language</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Copy your same CSS here but remove video styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #e8f5e9, #c8e6c9, #a5d6a7);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 500px;
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .header {
+        background: linear-gradient(to right, #2e7d32, #4caf50);
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 24px;
+        color: #2e7d32;
+        overflow: hidden;
+      }
+
+      .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .app-name {
+        color: white;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      .content {
+        padding: 30px;
+      }
+
+      .title {
+        text-align: center;
+        color: #2e7d32;
+        margin-bottom: 25px;
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      .language-card {
+        background: #f1f8e9;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .language-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border-color: #4caf50;
+      }
+
+      .language-name {
+        color: #2e7d32;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      .language-desc {
+        color: #689f38;
+        font-size: 14px;
+      }
+
+      .footer {
+        padding: 25px;
+        background: #f1f8e9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .terms {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        color: #388e3c;
+        font-size: 14px;
+      }
+
+      .checkbox {
+        margin-right: 10px;
+        width: 18px;
+        height: 18px;
+        accent-color: #4caf50;
+      }
+
+      .accept-button {
+        background: linear-gradient(to bottom, #4caf50, #2e7d32);
+        color: white;
+        border: none;
+        padding: 16px 40px;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 8px 0 #1b5e20, 0 15px 20px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .accept-button:hover {
+        transform: translateY(3px);
+        background: linear-gradient(90deg, rgb(125, 231, 148), green);
+        box-shadow: 0 5px 0 #1b5e20, 0 10px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .accept-button:active {
+        transform: translateY(6px);
+        box-shadow: 0 2px 0 #1b5e20, 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .divider {
+        height: 1px;
+        background: linear-gradient(to right, transparent, #c8e6c9, transparent);
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo-container">
+          <div class="logo">
+            <img
+              src="https://i.ibb.co/ksJ9p602/Screenshot-2025-09-12-095804.png"
+              alt="Logo"
+            />
+          </div>
+          <h1 class="app-name">CROPNEXUS</h1>
+        </div>
+      </div>
+
+      <div class="content">
+        <h2 class="title">Select your language</h2>
+
+        <div class="language-card">
+          <div class="language-name">বাংলা (Bengali)</div>
+          <div class="language-desc">আপনার ভাষায় কৃষি</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="language-card">
+          <div class="language-name">English</div>
+          <div class="language-desc">Farming in your language</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="language-card">
+          <div class="language-name">हिंदी (Hindi)</div>
+          <div class="language-desc">आपकी भाषा में कृषि</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <label class="terms">
+          <input type="checkbox" class="checkbox" />
+          I read and accept the terms of use and the privacy policy.
+        </label>
+
+        <button
+          class="accept-button"
+          onclick="window.location.href='index.html'"
+        >
+          Accept
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const languageCards = document.querySelectorAll(".language-card");
+      const acceptButton = document.querySelector(".accept-button");
+
+      // Language selection highlight
+      languageCards.forEach((card) => {
+        card.addEventListener("click", function () {
+          languageCards.forEach((c) => (c.style.borderColor = "transparent"));
+          this.style.borderColor = "#4caf50";
+        });
+      });
+
+      // Accept button effect
+      acceptButton.addEventListener("click", function () {
+        this.innerHTML = "Processing...";
+        this.disabled = true;
+
+        setTimeout(() => {
+          alert("Language selected successfully!");
+          this.innerHTML = "Accept";
+          this.disabled = false;
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>

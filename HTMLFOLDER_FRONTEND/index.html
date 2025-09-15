@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CropNexus - Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      background: linear-gradient(135deg, #183912, #010f05);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path fill="%2322c55e" fill-opacity="0.1" d="M0,300 C400,100 800,100 1200,300 L1200,600 L0,600 Z"/></svg>')
+        no-repeat;
+      background-size: 100% auto;
+      background-position: center bottom;
+      z-index: -1;
+    }
+
+    .floating-leaves {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .leaf {
+      position: absolute;
+      font-size: 1.5rem;
+      color: rgba(34, 197, 94, 0.5);
+      animation: float 15s infinite linear;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-20vh) rotate(360deg);
+      }
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 25px;
+      overflow: hidden;
+      transform: translateZ(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1;
+      position: relative;
+    }
+
+    .container:hover {
+      transform: translateZ(15px);
+      box-shadow: 0px 20px 40px rgba(8, 10, 7, 0.71);
+      border: 3px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .header {
+      padding: 25px;
+      text-align: center;
+      position: relative;
+    }
+
+    .logo-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      perspective: 1000px;
+    }
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s ease;
+      border-radius: 50%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo:hover {
+      transform: rotateY(20deg) rotateX(10deg) scale(1.05);
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1),
+        0 10px 30px rgba(34, 197, 94, 0.4),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+      transition: all 0.5s ease;
+      filter: brightness(1.1) contrast(1.1);
+    }
+
+    .logo::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 50%;
+      background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+      );
+      z-index: -1;
+      animation: rotate 3s linear infinite;
+    }
+
+    .logo::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle at 30% 30%,
+        rgba(255, 255, 255, 0.4),
+        transparent 40%
+      );
+      mix-blend-mode: overlay;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    h1 {
+      color: rgb(255, 255, 255);
+      margin-top: 30px;
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-container {
+      padding: 36px;
+    }
+
+    .input-group {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #c8e6c9;
+      border-radius: 25px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .input-group input:focus {
+      border-color: #4caf50;
+      box-shadow: 0 0 0 3px rgb(231, 245, 233);
+      outline: none;
+    }
+
+    .forgot-password {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .forgot-password a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .forgot-password a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      border-radius: 15px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 120px;
+      text-align: center;
+    }
+
+    .login-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      padding: 15px;
+      font-size: 1rem;
+      font-weight: 600;
+      background: linear-gradient(45deg, #22c55e, #4ade80);
+      color: #0a1a1a;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .login-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+      transition: 0.5s;
+    }
+
+    .login-btn:hover::before {
+      left: 100%;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(34, 197, 94, 0.6);
+    }
+
+    .signup-btn {
+      background: white;
+      color: #000000;
+      border: 2px solid #4caf50;
+      border-radius: 25px;
+      padding: 15px;
+      font-size: 16px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .signup-btn:hover {
+      background: linear-gradient(90deg, white, rgb(33, 164, 31));
+      transform: translateY(-3px);
+    }
+
+    .or {
+      font-weight: 600;
+      color: #fff8f8;
+      margin: 0 5px;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      .container {
+        border-radius: 20px;
+        max-width: 100%;
+      }
+
+      .header {
+        padding: 20px;
+      }
+
+      .logo-container {
+        width: 100px;
+        height: 100px;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-top: 20px;
+      }
+
+      .form-container {
+        padding: 25px 20px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .btn,
+      .login-btn {
+        width: 100%;
+        min-width: unset;
+      }
+
+      .or {
+        margin: 10px 0;
+        color: white;
+      }
+
+      .hero::before {
+        background-size: 150% auto;
+      }
+    }
+
+    @media (max-width: 350px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .logo-container {
+        width: 80px;
+        height: 80px;
+      }
+
+      .input-group input {
+        padding: 12px;
+      }
+    }
+
+    .animation {
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Glowing effect for the logo */
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 5px rgba(34, 197, 94, 0.5),
+          inset 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(34, 197, 94, 0.8),
+          inset 0 0 15px rgba(255, 255, 255, 0.3);
+      }
+      100% {
+        box-shadow: 0 0 5px rgba(34, 197, 94, 0.5),
+          inset 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    .logo img {
+      animation: glow 3s infinite;
+    }
+    ::placeholder {
+      color: #242020;
+      opacity: 1;
+    }
+  </style>
+  <body>
+    <section class="hero">
+      <!-- <div class="floating-leaves">
+        <div class="leaf" style="left: 10%; animation-delay: 0s">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <div class="leaf" style="left: 20%; animation-delay: 2s">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <div class="leaf" style="left: 30%; animation-delay: 4s">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <div class="leaf" style="right: 10%; animation-delay: 6s">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <div class="leaf" style="right: 20%; animation-delay: 8s">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <div class="leaf" style="right: 30%; animation-delay: 10s">
+          <i class="fas fa-leaf"></i>
+        </div>
+      </div> -->
+    </section>
+
+    <div class="container animation">
+      <div class="header">
+        <div class="logo-container">
+          <div class="logo">
+            <img
+              src="https://i.ibb.co/ksJ9p602/Screenshot-2025-09-12-095804.png"
+              alt="Screenshot-2025-09-12-095804"
+            />
+          </div>
+        </div>
+        <h1>CROPNEXUS</h1>
+      </div>
+
+      <div class="form-container">
+        <div class="input-group">
+          <label for="email">Email or Phone</label>
+          <input
+            type="text"
+            id="email"
+            placeholder="Enter your email or phone"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+          />
+        </div>
+
+        <div class="forgot-password">
+          <a style="color: #ffffff" href="#">Forgot Password?</a>
+        </div>
+
+        <div class="buttons">
+          <button class="login-btn" onclick="window.location.href='page1.html'">Login</button>
+          <span class="or">or</span>
+          <a class="btn signup-btn" href="signup.html">Create Account</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Login button functionality
+        const loginBtn = document.querySelector(".login-btn");
+        loginBtn.addEventListener("click", function () {
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          if (!email || !password) {
+            loginBtn.textContent = "Please fill all fields!";
+            loginBtn.style.background =
+              "linear-gradient(to right, #F44336, #E57373)";
+            setTimeout(() => {
+              loginBtn.textContent = "Login";
+              loginBtn.style.background =
+                "linear-gradient(45deg, #22c55e, #4ade80)";
+            }, 2000);
+          } else {
+            loginBtn.textContent = "Logging in...";
+            setTimeout(() => {
+              alert("Login successful!");
+              loginBtn.textContent = "Login";
+            }, 1500);
+          }
+        });
+
+        // Create account button functionality
+        const signupBtn = document.querySelector(".signup-btn");
+        signupBtn.addEventListener("click", function () {
+          signupBtn.textContent = "Redirecting...";
+          setTimeout(() => {
+            // In a real application, this would redirect to the signup page
+            // window.location.href = 'sign_up.html';
+            signupBtn.textContent = "Create Account";
+          }, 1500);
+        });
+
+        // Add hover effect to container
+        const container = document.querySelector(".container");
+        container.addEventListener("mouseenter", function () {
+          this.style.transform = "translateZ(15px) scale(1.02)";
+        });
+
+        container.addEventListener("mouseleave", function () {
+          this.style.transform = "translateZ(10px) scale(1)";
+        });
+
+        // Enhanced 3D effect for logo on mouse move
+        const logo = document.querySelector(".logo");
+        document.addEventListener("mousemove", function (e) {
+          const x = e.clientX / window.innerWidth - 0.5;
+          const y = e.clientY / window.innerHeight - 0.5;
+
+          logo.style.transform = `rotateY(${x * 15}deg) rotateX(${
+            y * -15
+          }deg) scale(1.05)`;
+        });
+      });
+    </script>
+  </body>
+</html>
