@@ -1,6 +1,7 @@
 
   <a href="#">
-    <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\main.jpg" alt="Logo" width="120" height="120">
+    <img src="![Uploading main.jpg…]()
+" alt="Logo" width="120" height="120">
   </a>
 
 
