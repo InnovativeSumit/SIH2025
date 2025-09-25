@@ -39,6 +39,7 @@ Here are the key technologies and frameworks used to build CropNexus AI:
 ## 📸 App Screenshots
 
 <p align="center">
+   <img src="./demo-photos/1.png" alt="App Screenshot 1" width="28%">
   <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\1.png" alt="App Screenshot 1" width="28%">
   <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\2.png" alt="App Screenshot 1" width="28%">
   <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\3.png" alt="App Screenshot 1" width="28%">
