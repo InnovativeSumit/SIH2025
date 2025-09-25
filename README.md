@@ -37,24 +37,21 @@ Here are the key technologies and frameworks used to build CropNexus AI:
 
 
 ## 📸 App Screenshots
-
 <p align="center">
-   <img src="./demo-photos/1.png" alt="App Screenshot 1" width="28%">
-  <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\1.png" alt="App Screenshot 1" width="28%">
-  <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\2.png" alt="App Screenshot 1" width="28%">
-  <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\3.png" alt="App Screenshot 1" width="28%">
-  <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\4.jpg" alt="App Screenshot 1" width="28%">
-  <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\5.jpg" alt="App Screenshot 1" width="28%">
-  <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\6.jpg" alt="App Screenshot 1" width="28%">
-  <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\7.jpg" alt="App Screenshot 1" width="28%">
-  <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\8.jpg" alt="App Screenshot 1" width="28%">
-  <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\9.jpg" alt="App Screenshot 1" width="28%">
-  <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\10.jpg" alt="App Screenshot 1" width="28%">
-  <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\11.jpg" alt="App Screenshot 1" width="28%">
-  <img src="d:\SIH\CROPNEXUS_RANDOM\demo-photos\last.png" alt="App Screenshot 1" width="28%">
-  <!-- <img src="" alt="App Screenshot 1" width="28%">
-  <img src="" alt="App Screenshot 1" width="28%">
-  <img src="" alt="App Screenshot 1" width="28%"> -->
+  <img src="./demo-photos/1.png" alt="App Screenshot 1" width="28%">
+  <img src="./demo-photos/2.png" alt="App Screenshot 2" width="28%">
+  <img src="./demo-photos/3.png" alt="App Screenshot 3" width="28%">
+  <img src="./demo-photos/4.jpg" alt="App Screenshot 4" width="28%">
+  <img src="./demo-photos/5.jpg" alt="App Screenshot 5" width="28%">
+  <img src="./demo-photos/6.jpg" alt="App Screenshot 6" width="28%">
+  <img src="./demo-photos/7.jpg" alt="App Screenshot 7" width="28%">
+  <img src="./demo-photos/8.jpg" alt="App Screenshot 8" width="28%">
+  <img src="./demo-photos/9.jpg" alt="App Screenshot 9" width="28%">
+  <img src="./demo-photos/10.jpg" alt="App Screenshot 10" width="28%">
+  <img src="./demo-photos/11.jpg" alt="App Screenshot 11" width="28%">
+  <img src="./demo-photos/last.png" alt="App Screenshot Last" width="28%">
+</p>
+
 
 
 
