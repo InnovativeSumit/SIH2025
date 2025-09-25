@@ -1,0 +1,14 @@
+Monitoring Location-wise Details of Water quality data of River Ganga for TDS and pH in during 2023==>
+https://www.data.gov.in/resource/monitoring-location-wise-details-water-quality-data-river-ganga-tds-and-ph-during-2023
+
+Soil Moisture ==>
+https://www.data.gov.in/datasets_webservices/datasets/7210812
+
+Real time Air Quality Index from various locations ==>
+https://www.data.gov.in/resource/real-time-air-quality-index-various-locations
+
+Rainfall ==>
+https://www.data.gov.in/datasets_webservices/datasets/7210754
+
+Soil Classification 2014-15 ==>
+https://www.data.gov.in/resource/soil-classification-2014-15
