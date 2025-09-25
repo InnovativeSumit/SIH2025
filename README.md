@@ -1,8 +1,10 @@
 
+<p align="center">
   <a href="#">
-    <img src="![Uploading main.jpg…]()
-" alt="Logo" width="120" height="120">
+    <img src="./demo-photos/main.jpg" alt="Logo" width="120" height="120">
   </a>
+</p>
+
 
 
 # CropNexus AI - Complete Plant Disease Detection System
